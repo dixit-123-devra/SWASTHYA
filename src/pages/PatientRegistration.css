@@ -1,0 +1,46 @@
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  background-color: hsl(var(--bg-main));
+  border: 1px solid hsl(var(--text-muted) / 0.3);
+  color: hsl(var(--text-main));
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: hsl(var(--color-primary));
+}
+
+.scanner-box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 2px dashed hsl(var(--color-primary));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: hsl(var(--bg-main) / 0.5);
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: hsl(var(--color-primary));
+  box-shadow: 0 0 10px hsl(var(--color-primary));
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
